@@ -3,27 +3,31 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #070707;
     line-height: 1.6;
-    transition: background-color 0.3s color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+/* Enlaces */
 a {
     text-decoration: none;
-    color: inherit;
+    color: inherit;
 }
+
 
 /* Header */
 header {
     background-color: #ff6464;
-    padding: 20px;
+    padding: 20px 40px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 4px solid #e74c3c;
 }
 
 header h1 {
-    font-size: 1.8rem;
-    color: rgba(90, 0, 0, 0.927);
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 600;
 }
 
 nav ul {
@@ -52,6 +56,11 @@ nav ul li a:hover {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.hero:hover {
+    transform: scale(1.02);
 }
 
 .hero img {
@@ -71,9 +80,57 @@ nav ul li a:hover {
 .hero p {
     font-size: 1.1rem;
     color: #666;
+    line-height: 1.8;
+}
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px auto;  /* Centrado y separación */
+    padding: 40px;  /* Un poco más de padding para espacio interno */
+    background-color: white;
+    border-radius: 15px;  /* Bordes más redondeados */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);  /* Sombra más marcada para efecto "cajita" */
+    width: 80%;  /* Ancho reducido para que se vea como una caja centrada */
+    transition: transform 0.3s ease;
 }
 
-/* Projects Section */ /*para la seccion en general*/
+.hero:hover {
+    transform: scale(1.02);  /* Efecto sutil al pasar el ratón */
+}
+
+.hero img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 4px solid #ffa4e4;  /* Borde rosa claro */
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Añadir margen alrededor de la caja */
+.container {
+    padding: 50px;
+}
+
+/* Efectos adicionales */
+.hero:hover {
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);  /* Aumentar la sombra al hacer hover */
+}
+
+/* Projects Section */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -86,7 +143,7 @@ nav ul li a:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project:hover {
@@ -102,9 +159,10 @@ nav ul li a:hover {
 
 .project p {
     color: #666;
+    font-size: 1rem;
 }
 
-/* GALLERY*/
+/* Gallery Section */
 .gallery {
     margin: 40px 0;
     text-align: center;
@@ -118,39 +176,54 @@ nav ul li a:hover {
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
     justify-items: center;
-    padding: 0 10px;
+    padding: 0 20px;
 }
- 
+
 .gallery-item {
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item img {
+    width: 800px;
+    height: 800px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery-item {
+    width: 150px; /* Ajusta el tamaño según lo necesites */
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
+    height: 100%;
+    object-fit: cover;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.gallery-item img:hover {
-    transform: scale(1.1);
-}
 
 /* Skills Section */
-
-
 .skills-container {
     display: flex;
     justify-content: space-around;
@@ -210,8 +283,7 @@ nav ul li a:hover {
     font-weight: 600;
 }
 
-/*Recomendaciones*/
-
+/* Recommendations Section */
 .recommendations {
     margin: 40px 0;
     text-align: center;
@@ -258,8 +330,8 @@ nav ul li a:hover {
     color: #f39c12;
     font-size: 1rem;
 }
-/*Articulos*/
 
+/* Articles Section */
 .articles {
     margin: 40px 0;
     text-align: center;
@@ -273,7 +345,6 @@ nav ul li a:hover {
 
 .articles-container {
     display: flex;
-    /justify-content: space-between;/
     justify-content: space-around;
     gap: 30px;
     flex-wrap: wrap;
@@ -329,7 +400,8 @@ nav ul li a:hover {
 }
 
 .contact-form input,
-.contact-form textarea,  .contact-form select  {
+.contact-form textarea,
+.contact-form select {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -351,7 +423,7 @@ nav ul li a:hover {
     background-color: #f39c12;
 }
 
-.container{
+.container {
     padding: 50px;
 }
 
